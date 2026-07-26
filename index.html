@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Business</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <header class="site-header">
+    <div class="wordmark">Your&nbsp;Business</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">Now open</p>
+      <h1>Ask us anything.<br>We're listening — always.</h1>
+      <p class="lede">
+        Have a question, need a quick idea, or want help with something?
+        Our assistant is right here in the corner, day or night.
+      </p>
+    </section>
+
+    <section id="services" class="services">
+      <div class="service">
+        <h3>Chat</h3>
+        <p>Real answers about what we offer, right when you think of the question.</p>
+      </div>
+      <div class="service">
+        <h3>Ideas</h3>
+        <p>Stuck on wording or a quick draft? Ask the assistant to help you write it.</p>
+      </div>
+      <div class="service">
+        <h3>Support</h3>
+        <p>Hours, policies, how to reach a person — ask first, wait never.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Prefer a human?</h2>
+      <p>Reach us at <a href="mailto:emmanueleboh219@gmail.com">emmanueleboh219@gmail.com</a></p>
+    </section>
+  </main>
+
+  <!-- Assistant widget -->
+  <div id="assistant-launcher" aria-label="Open assistant">
+    <span class="dot"></span>
+    Ask something
+  </div>
+
+  <div id="assistant-panel" class="hidden">
+    <div class="assistant-head">
+      <span>Assistant</span>
+      <button id="assistant-close" aria-label="Close">&times;</button>
+    </div>
+    <div id="assistant-messages"></div>
+    <form id="assistant-form">
+      <input id="assistant-input" type="text" placeholder="Type a message…" autocomplete="off" required>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
