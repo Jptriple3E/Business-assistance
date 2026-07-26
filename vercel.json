@@ -1,0 +1,9 @@
+{
+  "buildCommand": null,
+  "outputDirectory": "public",
+  "functions": {
+    "api/chat.js": {
+      "memory": 256
+    }
+  }
+}

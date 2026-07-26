@@ -39,12 +39,28 @@ support queries — all through one chat panel in the corner of the page.
 - **Colors & fonts**: edit `public/style.css` (`:root` variables at
   the top control the palette)
 
-## Deploying
+## Deploying to Vercel
 
-This is a standard Node/Express app. It can be deployed to services
-like Render, Railway, Fly.io, or a VPS. Whichever you pick, set the
-`ANTHROPIC_API_KEY` environment variable in that service's dashboard
-— don't upload your `.env` file directly.
+Vercel doesn't run `server.js` directly — it uses the serverless
+function in `api/chat.js` instead, with `vercel.json` routing static
+files from `public/` and API calls to `api/chat.js`. The frontend
+code doesn't need to change; `/api/chat` works the same either way.
+
+Steps:
+1. Push this project to a GitHub repo (or use `vercel` CLI directly).
+2. Import it in Vercel.
+3. In the project's **Settings → Environment Variables**, add:
+   - `ANTHROPIC_API_KEY` = your real key
+4. Redeploy. The "Cannot GET /" error means either the deploy hasn't
+   picked up `public/index.html` yet, or it ran before the API key
+   was set — redeploying after adding the env variable fixes both.
+
+## Deploying elsewhere (Render, Railway, Fly.io, a VPS)
+
+These run `server.js` directly with `npm start`, so no extra config
+needed — just set `ANTHROPIC_API_KEY` in that service's dashboard.
+Don't upload your `.env` file directly; use the platform's env var
+settings instead.
 
 ## Notes
 
